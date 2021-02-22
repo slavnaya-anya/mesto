@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pages/index.css"> 
+</head>
+
+<body class="page">
+    <header class="header">
+        <img class="header__logo" src="./images/Vector.png" alt="Лого место">
+    </header>
+    <main>
+    <section class="profile">
+      <img class="profile__avatar" src="./images/Avatar (1).png" alt="">
+      <div class="profile__info">
+        <div class="profile__text">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <button type="button" aria-label="Редактирвоать" class="popup_open"></button> 
+        </div>
+        <p class="profile__inform">Исследователь океана</p>
+        </div> 
+        <button type="button" aria-label="Добавить" class="profile__add"></button>
+    </section>
+    <section class="elements">
+        <ul class="element__cards">
+            <li class="element__card">
+              <div class="element__rectangle">
+                <img class="element__image" src="./images/карачаевск.png" alt="Карачаевск">
+                <div class="element__description"><h2 class="element__title">Карачаевск</h2>
+                   <div class="element__like-group">
+                     <button class="element__like" class="element__like-active" title="Нравится"></button>
+                   </div>
+                </div>
+               </div>
+            </li>
+            <li class="element__card">
+              <div class="element__rectangle">
+                <img class="element__image" src="./images/эльбрусс.png" alt="Горы Эльбрус">
+                <div class="element__description"><h2 class="element__title">Горы Эльбрус</h2>
+                  <div class="element__like-group">
+                    <button class="element__like" class="element__like-active" title="Нравится"></button>
+                  </div>
+               </div>
+              </div>
+            </li>
+            <li class="element__card">
+              <div class="element__rectangle">
+                <img class="element__image" src="./images/домбай.png" alt="Домбай">
+                <div class="element__description"><h2 class="element__title">Домбай</h2>
+                  <div class="element__like-group">
+                    <button class="element__like" class="element__like-active" title="Нравится"></button>
+                  </div>
+               </div>
+              </div>
+            </li>
+            <li class="element__card">
+              <div class="element__rectangle">
+                <img class="element__image" src="./images/эльбрус.png" alt="Эльбрус">
+                <div class="element__description"><h2 class="element__title">Эльбрус</h2>
+                  <div class="element__like-group">
+                    <button class="element__like" class="element__like-active" title="Нравится"></button>
+                  </div>
+               </div>
+              </div>
+            </li>
+            <li class="element__card">
+              <div class="element__rectangle">   
+                <img class="element__image" src="./images/доомбай.png" alt="Домбай">
+                <div class="element__description"><h2 class="element__title">Домбай</h2>
+                  <div class="element__like-group">
+                    <button class="element__like" class="element__like-active" title="Нравится"></button>
+                  </div>
+               </div>
+              </div>
+            </li>
+            <li class="element__card">
+              <div class="element__rectangle"> 
+                <img class="element__image" src="./images/карачаевск.png" alt="Карачаево-Черкесия">
+                <div class="element__description"><h2 class="element__title">Карачаево-Черкесия</h2>
+                  <div class="element__like-group">
+                    <button class="element__like" class="element__like-active" title="Нравится"></button>
+                  </div>
+               </div>
+              </div>
+            </li>
+        </ul>
+    </section>
+    </main>   
+    <footer class="footer">
+        <img class="profile__avatar" src="./images/© 2020 Mesto Russia.png" alt="© 2020 Mesto Russia">
+    </footer>
+    <section class="overlay overlay_active">
+    <form class="popup" name="edituser">
+      <h3 class="overlay__title">Редактировать профиль</h3>
+        <fieldset class="form__fieldset">
+          <input class="form__input" type="text" id="profile__title_text" aria-label="Имя" placeholder="Имя" name="name" required>
+          <input class="form__input" type="text" id="profile-caption" aria-label="подпись" placeholder="Подпись" name="about" required>
+          <button class="form__save-button popup__save-button" type="submit">Сохранить</button>
+          </fieldset>
+          <button type="reset" class="popup__close-button" aria-label="Закрыть форму"></button>
+          <span class="popup__close"></span>
+    </form>
+
+    </section>
+    <script src="script/index.js"></script>
+</html>
