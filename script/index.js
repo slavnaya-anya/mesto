@@ -1,4 +1,4 @@
-let openButton = document.querySelector('.popup_open');
+let openButton = document.querySelector('.popup__open');
 let body = document.querySelector('.body');
 let overlay = document.querySelector('.overlay');
 let userName = document.querySelector('.profile__name');
