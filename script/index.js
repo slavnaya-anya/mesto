@@ -1,4 +1,4 @@
-let openButton = document.querySelector('.popup__open');
+let openButton = document.querySelector('.profile__open');
 let body = document.querySelector('.body');
 let overlay = document.querySelector('.overlay');
 let userName = document.querySelector('.profile__name');
@@ -36,7 +36,7 @@ form.addEventListener('submit', (event) => {
 
 document.addEventListener('keypress', function(event){
   if (event.keyCode === 32) {
-    const popupActive = document.querySelector('.popup_open');
+    const popupActive = document.querySelector('.profile__open');
     closePopup(popupActive);
     event.preventDefault();
   }
