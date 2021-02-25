@@ -1,5 +1,5 @@
 .profile__name {
-    font-family: 'Inter', 'Inter-Medium';
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
     max-width: 400px;
     overflow: hidden;
     text-overflow: ellipsis;
