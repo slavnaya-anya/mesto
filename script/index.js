@@ -22,6 +22,7 @@ function editUserInfo() {
 
 openButton.addEventListener('click', () => {
   overlay.classList.add('overlay_active');
+  openButton.blur();
 });
 
 closeButton.addEventListener('click', closePopup) ;
