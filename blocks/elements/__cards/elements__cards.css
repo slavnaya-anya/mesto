@@ -1,4 +1,4 @@
-.element__cards {
+.elements__cards {
     display: grid;
     margin: 0 auto;
     padding: 0;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (min-width: 320px)and (max-width: 767px) {
-    .element__cards { 
+    .elements__cards { 
      max-width: 282px;
      gap: 20px;
      }
