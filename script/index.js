@@ -1,5 +1,4 @@
 let openButton = document.querySelector('.profile__open');
-let body = document.querySelector('.body');
 let overlay = document.querySelector('.overlay');
 let userName = document.querySelector('.profile__name');
 let userAbout = document.querySelector('.profile__inform');
@@ -11,6 +10,7 @@ let form = document.forms.edituser;
 let inputName = form.elements.name;
 let inputAbout = form.elements.about;
 
+
 function closePopup() {
   overlay.classList.remove('overlay_active');
 }
@@ -20,13 +20,22 @@ function editUserInfo() {
   userAbout.textContent = inputAbout.value;
 }
 
-openButton.addEventListener('click', () => {
+function UserInfo() {
+  inputName.value = userName.textContent;
+  inputAbout.value = userAbout.textContent;
+}
+
+function openPopup() {
   overlay.classList.add('overlay_active');
+  UserInfo();
+}
+
+openButton.addEventListener('click', () => {
+  openPopup();
   openButton.blur();
 });
 
 closeButton.addEventListener('click', closePopup) ;
-
 
 
 form.addEventListener('submit', (event) => {
@@ -34,14 +43,6 @@ form.addEventListener('submit', (event) => {
   editUserInfo();
   closePopup();
 });
-
-document.addEventListener('keypress', function(event){
-  if (event.keyCode === 32) {
-    const popupActive = document.querySelector('.profile__open');
-    closePopup(popupActive);
-    event.preventDefault();
-  }
-})
 
 
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mesto</title>
     <link rel="stylesheet" href="pages/index.css"> 
 </head>
 <body class="page">
@@ -25,66 +25,54 @@
     <section class="elements">
       <ul class="elements__cards">
         <li class="element">
-          <div class="element__rectangle">
             <img class="element__image" src="./images/карачаевск.png" alt="Карачаевск">
             <div class="element__description">
               <h2 class="element__title">Карачаевск</h2>
-              <button class="element__like" title="Нравится"></button>
+              <button class="element__like" type="button" title="Нравится"></button>
             </div>
-          </div>
         </li>
         <li class="element">
-          <div class="element__rectangle">
             <img class="element__image" src="./images/эльбрусс.png" alt="Горы Эльбрус">
             <div class="element__description">
               <h2 class="element__title">Горы Эльбрус</h2>
-              <button class="element__like" title="Нравится"></button>
+              <button class="element__like" type="button" title="Нравится"></button>
             </div>
-          </div>
         </li>
         <li class="element">
-          <div class="element__rectangle">
             <img class="element__image" src="./images/домбай.png" alt="Домбай">
             <div class="element__description">
               <h2 class="element__title">Домбай</h2>
-              <button class="element__like" title="Нравится"></button>
+              <button class="element__like" type="button" title="Нравится"></button>
             </div>
-          </div>
         </li>
         <li class="element">
-          <div class="element__rectangle">
             <img class="element__image" src="./images/эльбрус.png" alt="Эльбрус">
             <div class="element__description">
               <h2 class="element__title">Эльбрус</h2>
-              <button class="element__like" title="Нравится"></button>
+              <button class="element__like" type="button" title="Нравится"></button>
             </div>
-          </div>
         </li>
-        <li class="element">
-          <div class="element__rectangle">   
+        <li class="element">   
             <img class="element__image" src="./images/доомбай.png" alt="Домбай">
             <div class="element__description">
               <h2 class="element__title">Домбай</h2>
-              <button class="element__like" title="Нравится"></button>
+              <button class="element__like" type="button" title="Нравится"></button>
             </div>
-          </div>
         </li>
         <li class="element">
-          <div class="element__rectangle"> 
             <img class="element__image" src="./images/карачаевск.png" alt="Карачаево-Черкесия">
             <div class="element__description">
               <h2 class="element__title">Карачаево-Черкесия</h2>
-              <button class="element__like" title="Нравится"></button>
+              <button class="element__like" type="button" title="Нравится"></button>
             </div>
-          </div>
         </li>
       </ul>
     </section>
   </main>   
   <footer class="footer">
-    <img class="footer__logo" src="./images/© 2020 Mesto Russia.png" alt="© 2020 Mesto Russia">
+    <p class="footer__text">© 2020 Mesto Russia</p>
   </footer>
-  <section class="overlay">
+  <article class="overlay">
     <form class="form popup" name="edituser">
       <h3 class="overlay__title">Редактировать профиль</h3>
         <fieldset class="form__fieldset">
@@ -92,10 +80,9 @@
           <input class="form__input" type="text" id="profile-caption" aria-label="подпись" placeholder="Подпись" name="about" required>
           <button class="form__save-button" type="submit">Сохранить</button>
         </fieldset>
-        <button type="reset" class="popup__close-button" aria-label="Закрыть форму"></button>
-        <span class="popup__close"></span>
+        <button type="button" class="popup__close-button" aria-label="Закрыть форму"></button>
     </form>
-  </section>
+  </article>
   <script src="script/index.js"></script>
   </body>
 </html>

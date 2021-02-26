@@ -1,4 +1,7 @@
 .elements {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: nowrap;  
     max-width: 880px;
     margin: 0 auto;
     justify-content: center;
