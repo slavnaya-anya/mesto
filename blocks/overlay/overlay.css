@@ -7,8 +7,7 @@
     background-color: rgba(0, 0, 0, 0.7);
     display: none;
     justify-content: center;
-    padding: 199px 98px 0 83px;
-    align-items: flex-start;
+    align-items: center;
     overflow-y: auto;
     overflow-x: hidden;
 }
