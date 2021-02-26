@@ -1,6 +1,3 @@
 .element__image {
-    display: flex;
-    box-sizing: border-box;
-    justify-content: space-between;
-    flex-flow: row nowrap;  
+
 }
