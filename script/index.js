@@ -20,22 +20,19 @@ function editUserInfo() {
   userAbout.textContent = inputAbout.value;
 }
 
-function UserInfo() {
+function saveUserInfo() {
   inputName.value = userName.textContent;
   inputAbout.value = userAbout.textContent;
 }
 
 function openPopup() {
   overlay.classList.add('overlay_active');
-  UserInfo();
+  saveUserInfo();
 }
 
-openButton.addEventListener('click', () => {
-  openPopup();
-  openButton.blur();
-});
+openButton.addEventListener('click', openPopup); 
 
-closeButton.addEventListener('click', closePopup) ;
+closeButton.addEventListener('click', closePopup);
 
 
 form.addEventListener('submit', (event) => {

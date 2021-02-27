@@ -11,7 +11,3 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
-
-.overlay_active {
-    display:flex;
-  }
