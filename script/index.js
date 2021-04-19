@@ -1,8 +1,8 @@
-let openEditButton = document.querySelector('.profile__open');
-let popup = document.querySelector('.popup');
-let userName = document.querySelector('.profile__name');
-let userAbout = document.querySelector('.profile__inform');
-let closeEditButton = popup.querySelector('.popup__close-button');
+const openEditButton = document.querySelector('.profile__open');
+const popup = document.querySelector('.popup');
+const userName = document.querySelector('.profile__name');
+const userAbout = document.querySelector('.profile__inform');
+const closeEditButton = popup.querySelector('.popup__close-button');
 
 const popupInfo = document.querySelector('.popup_info');
 const popupAdd = document.querySelector('.popup_add');
@@ -16,48 +16,33 @@ const popupImage = document.querySelector('.popup_image');
 const imageModalImage = popupImage.querySelector('.popup__img');
 const imageModalCaption = popupImage.querySelector('.popup__img-caption');
 
-let popupAddCard = document.querySelector('.popup_add');
-let showAddCard = document.querySelector('.profile__add');
-let closeAddCard = popupAdd.querySelector('.popup__close-button');
-let closeImgButton = popupImage.querySelector('.popup__close-button');
+const popupAddCard = document.querySelector('.popup_add');
+const showAddCard = document.querySelector('.profile__add');
+const closeAddCard = popupAdd.querySelector('.popup__close-button');
+const closeImgButton = popupImage.querySelector('.popup__close-button');
 
+const container = document.querySelector('.elements__cards');
+const templateElement = document.querySelector('.template');
+const createButton = document.querySelector('#create-card-button');
 
-function closePopup() {
-  popupInfo.classList.remove('popup_active');
+const form = document.forms.edituser;
+const inputName = form.elements.name;
+const inputAbout = form.elements.about;
+
+function closePopup(modal) {
+  modal.classList.remove('popup_active');
 }
 
-function openPopup() {
-  popupInfo.classList.add('popup_active');
+function openPopup(modal) {
+  modal.classList.add('popup_active');
   saveUserInfo();
 }
 
-openEditButton.addEventListener('click', openPopup);
-closeEditButton.addEventListener('click', closePopup);
-closeImgButton.addEventListener('click', closeImgPopup);
-
-
-function closeAddPopup() {
-  popupAdd.classList.remove('popup_active');
-}
-
-function openAddPopup() {
-  popupAdd.classList.add('popup_active');
-}
-
-function closeImgPopup() {
-  popupImage.classList.remove('popup_active');
-}
-
-function openImgPopup() {
-  popupImage.classList.add('popup_active');
-}
-
-showAddCard.addEventListener('click', openAddPopup);
-closeAddCard.addEventListener('click', closeAddPopup);
-
-let form = document.forms.edituser;
-let inputName = form.elements.name;
-let inputAbout = form.elements.about;
+openEditButton.addEventListener('click', () => openPopup(popupInfo));
+closeEditButton.addEventListener('click', () => closePopup(popupInfo));
+closeImgButton.addEventListener('click', () => closePopup(popupImage));
+showAddCard.addEventListener('click', () => openPopup(popupAdd));
+closeAddCard.addEventListener('click', () => closePopup(popupAdd));
 
 function editUserInfo() {
   userName.textContent = inputName.value;
@@ -109,9 +94,6 @@ const initialCards = [
   }
 ];
 
-const container = document.querySelector('.elements__cards');
-const templateElement = document.querySelector('.template');
-const createButton = document.querySelector('#create-card-button');
 
 //Удаление карточки
 function trashCardHandler(evt) {
@@ -132,8 +114,8 @@ function createCard(item) {
   name.textContent = item.name;
   const link = newCard.querySelector('.element__image');
   link.src = item.link;
+  link.alt = name;
   trashCardListener(newCard)
-
 
 
 
@@ -157,7 +139,8 @@ createButton.addEventListener('click', (e) => {
 
   data.name = addCardTitleInput.value;
   data.link = addCardLinkInput.value;
-  formCreateCard(data)
+  formCreateCard(data);
+  document.querySelector('.form_add-card').reset();
   closeAddPopup();
 })
 
@@ -172,11 +155,11 @@ function formCreateCard(data) {
 function imageClickHandler (e) {
   imageModalImage.src = '';
   imageModalImage.src = e.target.src;
+  imageModalImage.alt = imageModalCaption;
   imageModalCaption.textContent = e.target.alt;
-  openImgPopup();
+  openPopup(popupImage);
 }
 
 document.querySelectorAll('.element__image').forEach(elem => {
   elem.addEventListener('click', imageClickHandler);
 });
-document.querySelector('.popup__img').addEventListener('click', closeImgPopup);
