@@ -113,6 +113,7 @@ function createCard(item) {
   name.textContent = item.name;
   const link = newCard.querySelector('.element__image');
   link.src = item.link;
+  link.alt = item.name;
   trashCardListener(newCard)
 
   newCard.querySelector('.element__image').addEventListener('click', imageClickHandler);
@@ -124,7 +125,6 @@ newCard.querySelector('.element__like').addEventListener('click', function(evt) 
 });
   return newCard;
 }
-
 
 function renderList() {
   const result = initialCards.map(createCard);
