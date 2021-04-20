@@ -115,6 +115,9 @@ function createCard(item) {
   link.src = item.link;
   trashCardListener(newCard)
 
+  newCard.querySelector('.element__image').addEventListener('click', imageClickHandler);
+  
+
   //Лайкнуть карточку
 newCard.querySelector('.element__like').addEventListener('click', function(evt) {
   evt.target.classList.toggle('element__like_active');
@@ -156,6 +159,3 @@ function imageClickHandler (e) {
   openPopup(popupImage);
 }
 
-document.querySelectorAll('.element__image').forEach(elem => {
-  elem.addEventListener('click', imageClickHandler);
-});
