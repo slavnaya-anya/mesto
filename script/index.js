@@ -57,13 +57,13 @@ function saveUserInfo() {
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   editUserInfo();
-  closePopup();
+  closePopup(popupInfo);
 });
 
 
 popup.addEventListener('click', (event) => {
   if (event.target === event.currentTarget) {
-    closePopup();
+    closePopup(popupInfo);
   }
 });
 
@@ -106,7 +106,6 @@ function trashCardListener(element) {
 
 }
 
-
 //Перенос карточек
 function createCard(item) {
   const newCard = templateElement.content.cloneNode(true);
@@ -114,10 +113,7 @@ function createCard(item) {
   name.textContent = item.name;
   const link = newCard.querySelector('.element__image');
   link.src = item.link;
-  link.alt = name;
   trashCardListener(newCard)
-
-
 
   //Лайкнуть карточку
 newCard.querySelector('.element__like').addEventListener('click', function(evt) {
@@ -141,7 +137,7 @@ createButton.addEventListener('click', (e) => {
   data.link = addCardLinkInput.value;
   formCreateCard(data);
   document.querySelector('.form_add-card').reset();
-  closeAddPopup();
+  closePopup(popupAdd);
 })
 
 renderList();
@@ -155,7 +151,7 @@ function formCreateCard(data) {
 function imageClickHandler (e) {
   imageModalImage.src = '';
   imageModalImage.src = e.target.src;
-  imageModalImage.alt = imageModalCaption;
+  imageModalImage.alt = e.target.alt;
   imageModalCaption.textContent = e.target.alt;
   openPopup(popupImage);
 }
