@@ -35,10 +35,12 @@ function closePopup(modal) {
 
 function openPopup(modal) {
   modal.classList.add('popup_active');
-  saveUserInfo();
 }
 
-openEditButton.addEventListener('click', () => openPopup(popupInfo));
+openEditButton.addEventListener('click', () => {
+  openPopup(popupInfo)
+  saveUserInfo();
+});
 closeEditButton.addEventListener('click', () => closePopup(popupInfo));
 closeImgButton.addEventListener('click', () => closePopup(popupImage));
 showAddCard.addEventListener('click', () => openPopup(popupAdd));
@@ -152,7 +154,6 @@ function formCreateCard(data) {
 
 //Открытие картинок
 function imageClickHandler (e) {
-  imageModalImage.src = '';
   imageModalImage.src = e.target.src;
   imageModalImage.alt = e.target.alt;
   imageModalCaption.textContent = e.target.alt;
